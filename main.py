@@ -1,5 +1,4 @@
 from base_changer import base_changer
-from has_letter import has_letter
 import sys
 
 print("Translate numbers between numeric systems.")
@@ -20,10 +19,7 @@ while valid:
         base_changer(num, from_base, to_base)
 
     except ValueError:
-        if from_base < 10 and has_letter(num) == True:
-            print("Numbers with letters are only for bases higher or equal than 10.")
-        else:
-            print("Bases must be integers between 2 and 16.")
+        print("Value Error: Bases can only be numeric.\n")
 
     except KeyboardInterrupt:
         print("\nGoodbye!")
