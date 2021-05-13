@@ -16,7 +16,7 @@ while valid:
             int(input("To base (n)\u2095\u2082: ")),
         )
 
-        base_changer(num, from_base, to_base)
+        base_changer(num.upper(), from_base, to_base)
 
     except ValueError:
         print("Value Error: Bases can only be numeric.\n")
