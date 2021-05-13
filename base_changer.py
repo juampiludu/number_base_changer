@@ -1,12 +1,13 @@
 from has_letter import has_letter
+from number_it import number_it
 
 def base_changer(a, b, c):
 
     if b < 10 and has_letter(a) == True:
         print("Error: Numbers which contain letters are only for bases higher or equal than 10.\n")
 
-    elif b < 2 or b > 16 or c < 2 or c > 16:
-        print("Error: Bases can only be numbers between 2 and 16.\n")
+    elif b < 2 or b > 36 or c < 2 or c > 36:
+        print("Error: Bases can only be numbers between 2 and 36.\n")
 
     else:
         # a is number
@@ -32,25 +33,10 @@ def base_changer(a, b, c):
                 # hexas iterates "a" to build a list of its digits
                 hexas = [str(a) for a in a]
 
-                # digits will contain digits of "a" as a list
-                digits = []
-
+                # digits will contain digits of "a" as a list.
                 # iterate list hexas to extract its elements
                 # and replace all letters by numbers
-                for i in hexas:
-                    if i == "A" or i == "a":
-                        i = 10
-                    elif i == "B" or i == "b":
-                        i = 11
-                    elif i == "C" or i == "c":
-                        i = 12
-                    elif i == "D" or i == "d":
-                        i = 13
-                    elif i == "E" or i == "e":
-                        i = 14
-                    elif i == "F" or i == "f":
-                        i = 15
-                    digits.append(int(i))
+                digits = number_it(hexas, b, c)
 
             else:
 
@@ -121,24 +107,9 @@ def base_changer(a, b, c):
             # digits_c
             digits_c_str = [str(digits_c) for digits_c in digits_c]
 
-            # new_hexas will contain numbers and letters
-            new_hexas = []
-
+            # new_hexas will contain numbers and letters.
             # this iterates digits_c_str to replace numbers by letters
-            for i in digits_c_str:
-                if int(i) == 10:
-                    i = "A"
-                elif int(i) == 11:
-                    i = "B"
-                elif int(i) == 12:
-                    i = "C"
-                elif int(i) == 13:
-                    i = "D"
-                elif int(i) == 14:
-                    i = "E"
-                elif int(i) == 15:
-                    i = "F"
-                new_hexas.append(i)
+            new_hexas = number_it(digits_c_str, b, c)
 
             # "a" take new value, that is the result of
             # joining all element of new_hexas to one string
@@ -148,5 +119,5 @@ def base_changer(a, b, c):
 
         if c > 10:
             print(
-                "Note: remember to change numbers with respective letters on bases higher than 10."
+                "Note: remember to change numbers with respective letters on bases higher than 10.\n"
             )
