@@ -1,9 +1,14 @@
 from has_letter import has_letter
-from number_it import number_it, check_letter
+from number_it import number_it, check_letter, check_in_b
 
 def base_changer(a, b, c):
 
     check_a_b = check_letter(a, b)
+    check_in_b = check_in_b(a, b)
+
+    if check_in_b == False:
+        print("Error: The number you've entered contains a character that does not correspond to the chosen base.")
+        return
 
     if check_a_b == False:
         print("Error: There is a letter in the number you entered that does not correspond to the chosen base.")

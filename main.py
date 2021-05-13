@@ -19,7 +19,7 @@ while valid:
         base_changer(num.upper(), from_base, to_base)
 
     except ValueError:
-        print("Value Error: Bases can only be numeric.\n")
+        print("Value Error: Number can only be alphanumeric. Bases can only be numeric. None field can be empty.\n")
 
     except KeyboardInterrupt:
         print("\nGoodbye!")

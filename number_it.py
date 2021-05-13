@@ -1,3 +1,5 @@
+from has_letter import has_letter
+
 def number_it(myList, b, c):
 
     digits = []
@@ -159,6 +161,33 @@ def check_letter(a, b):
         if i in conditions.keys():
 
             if b in conditions[i]:
+                return True
+            else:
+                return False
+
+
+conditions_b = {
+    2: list(range(2)),
+    3: list(range(3)),
+    4: list(range(4)),
+    5: list(range(5)),
+    6: list(range(6)),
+    7: list(range(7)),
+    8: list(range(8)),
+    9: list(range(9)),
+    10: list(range(10))
+}
+
+
+def check_in_b(a, b):
+
+    x = list(a)
+
+    if b in conditions_b.keys() and has_letter(a) == False:
+
+        for i in x:
+
+            if int(i) in conditions_b[i]:
                 return True
             else:
                 return False
