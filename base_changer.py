@@ -19,7 +19,7 @@ def base_changer(a, b, c):
         )
         return
 
-    if b < 10 and has_letter(a) == True:
+    if b <= 10 and has_letter(a) == True:
         print(
             "Error: Numbers which contain letters are only for bases higher or equal than 10.\n"
         )
