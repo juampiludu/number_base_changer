@@ -10,16 +10,23 @@ while valid:
 
     try:
 
+        print("\n--------------------------------------\n")
+
         num, from_base, to_base = (
-            input("\nNumber (n): "),
+            input("Number (n): "),
             int(input("From base (n)\u2095: ")),
             int(input("To base (n)\u2095\u2082: ")),
         )
 
         base_changer(num.upper(), from_base, to_base)
 
-    except ValueError:
-        print("Value Error: Number can only be alphanumeric. Bases can only be numeric. None field can be empty.\n")
+    # Note: comment this section to view errors.
+    # (*)
+    except ValueError as e:
+        print(
+            "Value Error: Number can only be alphanumeric. Bases can only be numeric. None field can be empty.\n"
+        )
+    # (*)
 
     except KeyboardInterrupt:
         print("\nGoodbye!")

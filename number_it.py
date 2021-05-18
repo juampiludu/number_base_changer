@@ -1,5 +1,6 @@
 from has_letter import has_letter
 
+
 def number_it(myList, b, c):
 
     digits = []
@@ -60,9 +61,8 @@ def number_it(myList, b, c):
             elif i == "Z":
                 i = 35
             digits.append(int(i))
-    
-    
-    if c != 10:
+
+    elif c != 10:
 
         for i in myList:
             if int(i) == 10:
@@ -123,32 +123,32 @@ def number_it(myList, b, c):
 
 
 conditions = {
-    'A': list(range(10,36)),
-    'B': list(range(11,36)),
-    'C': list(range(12,36)),
-    'D': list(range(13,36)),
-    'E': list(range(14,36)),
-    'F': list(range(15,36)),
-    'G': list(range(16,36)),
-    'H': list(range(17,36)),
-    'I': list(range(18,36)),
-    'J': list(range(19,36)),
-    'K': list(range(20,36)),
-    'L': list(range(21,36)),
-    'M': list(range(22,36)),
-    'N': list(range(23,36)),
-    'O': list(range(24,36)),
-    'P': list(range(25,36)),
-    'Q': list(range(26,36)),
-    'R': list(range(27,36)),
-    'S': list(range(28,36)),
-    'T': list(range(29,36)),
-    'U': list(range(30,36)),
-    'V': list(range(31,36)),
-    'W': list(range(32,36)),
-    'X': list(range(33,36)),
-    'Y': list(range(34,36)),
-    'Z': [35],
+    "A": list(range(10, 37)),
+    "B": list(range(11, 37)),
+    "C": list(range(12, 37)),
+    "D": list(range(13, 37)),
+    "E": list(range(14, 37)),
+    "F": list(range(15, 37)),
+    "G": list(range(16, 37)),
+    "H": list(range(17, 37)),
+    "I": list(range(18, 37)),
+    "J": list(range(19, 37)),
+    "K": list(range(20, 37)),
+    "L": list(range(21, 37)),
+    "M": list(range(22, 37)),
+    "N": list(range(23, 37)),
+    "O": list(range(24, 37)),
+    "P": list(range(25, 37)),
+    "Q": list(range(26, 37)),
+    "R": list(range(27, 37)),
+    "S": list(range(28, 37)),
+    "T": list(range(29, 37)),
+    "U": list(range(30, 37)),
+    "V": list(range(31, 37)),
+    "W": list(range(32, 37)),
+    "X": list(range(33, 37)),
+    "Y": list(range(34, 37)),
+    "Z": [36],
 }
 
 
@@ -175,19 +175,19 @@ conditions_b = {
     7: list(range(7)),
     8: list(range(8)),
     9: list(range(9)),
-    10: list(range(10))
+    10: list(range(10)),
 }
 
 
 def check_in_b(a, b):
 
-    x = list(a)
+    x = [str(a) for a in a]
 
     if b in conditions_b.keys() and has_letter(a) == False:
 
         for i in x:
 
-            if int(i) in conditions_b[i]:
+            if int(i) in conditions_b[b]:
                 return True
             else:
                 return False
