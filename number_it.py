@@ -182,12 +182,15 @@ conditions_b = {
 def check_in_b(a, b):
 
     x = [str(a) for a in a]
+    is_in_cond = None
 
     if b in conditions_b.keys() and has_letter(a) == False:
 
         for i in x:
 
-            if int(i) in conditions_b[b]:
-                return True
+            if int(i) not in conditions_b[b]:
+                is_in_cond = False
             else:
-                return False
+                is_in_cond = True
+
+    return is_in_cond

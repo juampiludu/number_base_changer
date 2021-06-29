@@ -1,5 +1,4 @@
 from base_changer import base_changer
-import sys
 
 print("Translate numbers between numeric systems.")
 print("Ctrl-C to exit.")
@@ -20,9 +19,9 @@ while valid:
 
         base_changer(num.upper(), from_base, to_base)
 
-    # Note: comment this section to view errors.
+    # Note: comment this section to display errors.
     # (*)
-    except ValueError as e:
+    except ValueError:
         print(
             "Value Error: Number can only be alphanumeric. Bases can only be numeric. None field can be empty.\n"
         )
