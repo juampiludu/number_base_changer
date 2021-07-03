@@ -1,4 +1,4 @@
-from has_letter import has_letter
+from .has_letter import has_letter
 
 
 def number_it(myList, b, c):

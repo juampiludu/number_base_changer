@@ -1,5 +1,6 @@
-from has_letter import has_letter
-from number_it import number_it, check_letter, check_in_b
+from .has_letter import has_letter
+from .number_it import number_it, check_letter, check_in_b
+from .text import *
 
 
 def base_changer(a, b, c):
@@ -8,25 +9,25 @@ def base_changer(a, b, c):
     check_number = check_in_b(a, b)
 
     if check_number == False:
-        print(
+        error_msg(
             "Error: The number you've entered contains a character that does not correspond to the chosen base."
         )
         return
 
     if check_a_b == False:
-        print(
+        error_msg(
             "Error: There is a letter in the number you entered that does not correspond to the chosen base."
         )
         return
 
     if b <= 10 and has_letter(a) == True:
-        print(
+        error_msg(
             "Error: Numbers which contain letters are only for bases higher or equal than 10.\n"
         )
         return
 
     if b < 2 or b > 36 or c < 2 or c > 36:
-        print("Error: Bases can only be numbers between 2 and 36.\n")
+        error_msg("Error: Bases can only be numbers between 2 and 36.\n")
         return
 
     # a is number
@@ -37,9 +38,9 @@ def base_changer(a, b, c):
     a_const = a
 
     # If bases are equal, then the result is "a"
-    if b == c:
-        print(f"\nBases are equal, the result is: {a}")
-        return
+    # if b == c:
+    #     print(f"\nBases are equal, the result is: {a}")
+    #     return a
 
     # If from_base is different to 10, then it will
     # find the value of "a" at base 10 number
@@ -89,7 +90,7 @@ def base_changer(a, b, c):
         k_str = [str(dec_dis) for dec_dis in dec_dis]
         print(f'\n= {" + ".join(k_str)}')
 
-        print(f"\n{a_const} on base 10 = {a}")
+        success_msg(f"\n{a_const} on base 10 = {a}")
 
     # If to_base is different to 10, then it will find the
     # value of "a" as a "c" or "to_base" number
@@ -136,9 +137,11 @@ def base_changer(a, b, c):
         # joining all element of new_hexas to one string
         a = "".join(new_hexas_str)
 
-        print(f"\n{a_const} on base {c} = {a}")
+        success_msg(f"\n{a_const} on base {c} = {a}")
 
     if c > 10:
-        print(
+        warning_msg(
             "Note: remember to replace numbers with respective letters on bases higher than 10.\n"
         )
+
+    return a
